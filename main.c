@@ -40,7 +40,11 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
     }
 
     float CalculoDeReceita() {
+        float receita;
 
+        for (int = 0 ; i < totalVendas ; i ++) {
+            receita = receita + vendas[i].precoTotal;
+        }
     }
 
 }
