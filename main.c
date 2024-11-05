@@ -14,9 +14,12 @@ int main()
 
 
 #define maximoDeVendas 10000
-Venda vendas[maximoDeVendas
+Venda vendas[maximoDeVendas]
 int totalVendas = 0; // tamanho do array de struct vendas
 
+void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer carregue o arquivo contendo as informacoes da venda.
+
+}
 
     return 0;
 }
