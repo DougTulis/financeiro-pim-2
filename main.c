@@ -12,5 +12,11 @@ int main()
     int dia, mes, ano;
 } venda;   // feito pra representa a venda (vinicius)
 
+
+#define maximoDeVendas 10000
+Venda vendas[maximoDeVendas
+int totalVendas = 0; // tamanho do array de struct vendas
+
+
     return 0;
 }
