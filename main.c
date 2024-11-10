@@ -21,7 +21,7 @@ int main() {
 
 
 void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer carregue o arquivo contendo as informacoes da venda.
-    FILE *arquivo = fopen("C:\\Users\\dotul\\Projetos em C\\Financeiro\\bin\\Debug\\Vendas.txt", "r"); // vo acessa pra ler o arquivo de vendas
+    FILE *arquivo = fopen("E:\\Linguagem_C\\financeiro-pim-2\\bin\\Debug\\Vendas.txt", "r"); // vo acessa pra ler o arquivo de vendas
     if (arquivo == NULL) {
         printf("Arquivo não encontrado."); // programacao defensiva
         totalVendas = 0; // comecando com 0 pra comecar a percorrer na leitura
@@ -44,6 +44,7 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
 
         for (int i = 0 ; i < totalVendas ; i ++) {
             receita += vendas[i].precoTotal;
+            printf("DOUGLASS");
         }
         return receita;
     }
