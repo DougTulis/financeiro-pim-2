@@ -37,6 +37,7 @@ int main() {
         break;
     case 0:
         printf("Saindo do sistema financeiro...\n");
+
         break;
     default:
         printf("Opção invalida...");
@@ -61,6 +62,7 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
                       &vendas[totalVendas].mes,
                       &vendas[totalVendas].ano) == 8) {
             totalVendas++;
+            printf("Arquivo lido! O nome do produto que foi vendido é: %s", vendas[totalVendas].nomeProd);
         }
         fclose(arquivo);
     }
@@ -72,4 +74,14 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
         receita += vendas[i].precoTotal;
     }
     return receita;
+}
+
+void mostrarResumoReceitas() { // relatorio resumido
+    printf("\n=== Resumo das receitas - venda ===\n");
+    for (int i = 0; i < totalVendas; i++) {
+        printf("ID Venda: %d | Produto: %s | Quantidade Vendida: %d | Preço Total: R$ %.2f | Data: %02d/%02d/%04d\n",
+               vendas[i].idVenda, vendas[i].nomeProd, vendas[i].qtdVendida, vendas[i].precoTotal,
+               vendas[i].dia, vendas[i].mes, vendas[i].ano);
+    }
+    printf("Total de Vendas Registradas: %d\n", totalVendas);
 }
