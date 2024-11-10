@@ -17,15 +17,15 @@ void carregarArquivoVendas();
 float calculoDeReceita();
 
 int main() {
+        int opcao;
+    do {
     carregarArquivoVendas();
-    int opcao;
     printf("\n=== MENU DO FINANCEIRO ===\n");
     printf("1. Ver Receita Total\n");
     printf("2. Exibir Resumo de Receitas\n");
     printf("0. Sair\n");
     printf("Escolha uma opção: ");
     scanf("%d", &opcao);
-
     switch(opcao) {
     case 1: {
         float totalReceita = calculoDeReceita(); // total vai recebe o calculo total receita vinda da funcao que realiza toda a soma
@@ -33,7 +33,7 @@ int main() {
         break;
     }
     case 2:
-        // exibirResumoReceitas(); em manutencao
+         mostrarResumoReceitas();
         break;
     case 0:
         printf("Saindo do sistema financeiro...\n");
@@ -43,7 +43,7 @@ int main() {
         printf("Opção invalida...");
         system("pause");
     }
-
+} while (opcao != 0);
     return 0;
 }
 
@@ -81,9 +81,9 @@ void mostrarResumoReceitas() { // relatorio resumido
     carregarArquivoVendas();
     printf("\n=== Resumo das receitas - venda ===\n");
     for (int i = 0; i < totalVendas; i++) {
-        printf("Id Venda: %d | Produto: %s | Quantidade Vendida: %d |preco Total: R$ %.2f | Data: %02d/%02d/%04d\n",
+        printf("Id Venda: %d | Produto: %s | Quantidade Vendida: %d |preco Total: R$ %.2f | Data: %d/%d/%d\n",
                vendas[i].idVenda, vendas[i].nomeProd, vendas[i].qtdVendida, vendas[i].precoTotal,
                vendas[i].dia, vendas[i].mes, vendas[i].ano);
     }
-    printf("Total de Vendas Registradas: %d\n", totalVendas);
+    printf("total de vendas que constam no registro: %d\n", totalVendas);
 }
