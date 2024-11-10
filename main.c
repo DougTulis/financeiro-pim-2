@@ -15,7 +15,15 @@ venda vendas[maximoDeVendas];
 int totalVendas = 0; // tamanho do array de struct venda
 
 int main() {
+    int opcao;
     printf("===MENU DO FINANCEIRO===\n");
+      printf("\n=== Menu Financeiro ===\n");
+        printf("1. Registrar Receita\n");
+        printf("2. Ver Receita Total\n");
+        printf("3. Exibir Resumo de Receitas\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
     return 0;
 }
 
