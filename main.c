@@ -24,8 +24,17 @@ int main() {
         printf("0. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
+
+         switch(opcao) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+         }
+
     return 0;
 }
+
 
 
 void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer carregue o arquivo contendo as informacoes da venda.
