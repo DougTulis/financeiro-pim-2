@@ -27,6 +27,19 @@ int main() {
 
          switch(opcao) {
             case 1:
+                int id, quantidade;  // registrando uma receita
+                float valorTotal;
+                char nomeProduto[50];
+                printf("ID do produto: ");
+                scanf("%d", &id);
+                printf("Nome do prduto: ");
+                scanf("%s", nomeProduto);
+                printf("Quantidade vendida: ");
+                scanf("%d", &quantidade);
+                printf("valor Total da Venda:");
+                scanf("%f", &valorTotal);
+                // registrarReceita(id,nomeProduto,  quantidade, valorTotal); (funcao em manutencao)
+            break ;
             case 2:
             case 3:
             case 4:
