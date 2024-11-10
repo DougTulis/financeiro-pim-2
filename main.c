@@ -16,34 +16,26 @@ int totalVendas = 0; // tamanho do array de struct venda
 
 int main() {
     int opcao;
-    printf("===MENU DO FINANCEIRO===\n");
-      printf("\n=== Menu Financeiro ===\n");
-        printf("1. Registrar Receita\n");
-        printf("2. Ver Receita Total\n");
-        printf("3. Exibir Resumo de Receitas\n");
+       printf("\n=== MENU DO FINANCEIRO ===\n");
+        printf("1. Ver Receita Total\n");
+        printf("2. Exibir Resumo de Receitas\n");
         printf("0. Sair\n");
         printf("Escolha uma opção: ");
         scanf("%d", &opcao);
 
-         switch(opcao) {
-            case 1:
-                int id, quantidade;  // registrando uma receita
-                float valorTotal;
-                char nomeProduto[50];
-                printf("ID do produto: ");
-                scanf("%d", &id);
-                printf("Nome do prduto: ");
-                scanf("%s", nomeProduto);
-                printf("Quantidade vendida: ");
-                scanf("%d", &quantidade);
-                printf("valor Total da Venda:");
-                scanf("%f", &valorTotal);
-                // registrarReceita(id,nomeProduto,  quantidade, valorTotal); (funcao em manutencao)
-            break ;
-            case 2:
-            case 3:
-            case 4:
-         }
+    switch(opcao) {
+    case 1:
+    case 2:
+
+    case 3:
+
+    case 4:
+        printf("Saindo do sistema financeiro...\n");
+                break;
+    default:
+        printf("Opção invalida...");
+        system("pause");
+    }
 
     return 0;
 }
