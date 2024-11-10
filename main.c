@@ -17,7 +17,7 @@ void carregarArquivoVendas();
 float calculoDeReceita();
 
 int main() {
-     carregarArquivoVendas();
+    carregarArquivoVendas();
     int opcao;
     printf("\n=== MENU DO FINANCEIRO ===\n");
     printf("1. Ver Receita Total\n");
@@ -51,6 +51,7 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
     FILE *arquivo = fopen("E:\\Linguagem_C\\financeiro-pim-2\\bin\\Debug\\Vendas.txt", "r"); // vo acessa pra ler o arquivo de vendas
     if (arquivo == NULL) {
         printf("Arquivo não encontrado."); // programacao defensiva
+        }
         totalVendas = 0; // comecando com 0 pra comecar a percorrer na leitura
         while (fscanf(arquivo, "%d,%d,%49[^,],%d,%f,%d,%d,%d",
                       &vendas[totalVendas].idVenda,
@@ -61,12 +62,12 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
                       &vendas[totalVendas].dia,
                       &vendas[totalVendas].mes,
                       &vendas[totalVendas].ano) == 8) {
+
             totalVendas++;
-            printf("Arquivo lido! O nome do produto que foi vendido é: %s", vendas[totalVendas].nomeProd);
         }
         fclose(arquivo);
     }
-}
+
 
    float calculoDeReceita() {
     float receita = 0;
@@ -77,9 +78,10 @@ void carregarArquivoVendas () { // aqui eu vou precisar de uma funcao void quer 
 }
 
 void mostrarResumoReceitas() { // relatorio resumido
+    carregarArquivoVendas();
     printf("\n=== Resumo das receitas - venda ===\n");
     for (int i = 0; i < totalVendas; i++) {
-        printf("ID Venda: %d | Produto: %s | Quantidade Vendida: %d | Preço Total: R$ %.2f | Data: %02d/%02d/%04d\n",
+        printf("Id Venda: %d | Produto: %s | Quantidade Vendida: %d |preco Total: R$ %.2f | Data: %02d/%02d/%04d\n",
                vendas[i].idVenda, vendas[i].nomeProd, vendas[i].qtdVendida, vendas[i].precoTotal,
                vendas[i].dia, vendas[i].mes, vendas[i].ano);
     }
